@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--Нужно соблюдать порядок, в противном случае если мы их поменяем местами то так не будет работать-->
+    <bean id="pool1" name="p1,p2,p3" class="com.dmdev.database.pool.ConnectionPool">
+        <constructor-arg value="postgers"/>
+        <constructor-arg value="10"/>
+        <constructor-arg>
+            <list>
+                <value>--arg1=value1</value>
+                <value>--arg2=value2</value>
+            </list>
+        </constructor-arg>
+        <constructor-arg>
+            <map>
+                <entry key="url" value="postgresurl"></entry>
+                <entry key="password" value="123"></entry>
+            </map>
+        </constructor-arg>
+    </bean>
+<!--        <bean id="pool2" class="com.dmdev.database.pool.ConnectionPool"/>-->
+
+</beans>
