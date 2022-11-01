@@ -20,5 +20,4 @@
         </constructor-arg>
     </bean>
 <!--        <bean id="pool2" class="com.dmdev.database.pool.ConnectionPool"/>-->
-
 </beans>
